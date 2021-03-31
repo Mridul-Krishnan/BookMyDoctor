@@ -13,6 +13,10 @@ import javax.persistence.OneToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+/**
+ * @author Mri scan
+ *
+ */
 @Entity
 public class Doctor {
 	@Id

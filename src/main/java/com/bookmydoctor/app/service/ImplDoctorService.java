@@ -11,6 +11,10 @@ import com.bookmydoctor.app.model.Appointment;
 import com.bookmydoctor.app.model.AvailabilityDates;
 import com.bookmydoctor.app.model.Doctor;
 
+/**
+ * @author Mri scan
+ *
+ */
 @Service
 public class ImplDoctorService implements IDoctorService{
 

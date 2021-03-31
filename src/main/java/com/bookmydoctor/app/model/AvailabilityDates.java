@@ -61,7 +61,7 @@ public class AvailabilityDates {
 	}
 	
 	public AvailabilityDates() {
-		// TODO Auto-generated constructor stub
+
 	}
 	
 	

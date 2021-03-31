@@ -25,7 +25,7 @@ class AddFeedBackTests {
 
 	@Test
 	@DisplayName("Test for adding new feedback details")
-	public void addFeedbackTest()
+	void addFeedbackTest()
 	{
 		FeedBack feedback = new FeedBack("good");
 		Mockito.when(repository.save(feedback)).thenReturn(feedback);

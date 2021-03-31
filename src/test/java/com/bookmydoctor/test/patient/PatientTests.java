@@ -32,7 +32,7 @@ class PatientTests {
 	@DisplayName("Test case for adding ")
 	void contextLoads() {
 		
-		Patient patient = new Patient (123,"Vibhrat",778899,"email@gmail","password","O positive","Male",23,"Potheri");
+		Patient patient = new Patient (123,"Vibhrat",778899L,"email@gmail","password","O positive","Male",23,"Potheri");
 		Mockito.when(dao.save(patient)).thenReturn(patient);
 		assertEquals(service.addPatient(patient),patient);
 	}
@@ -41,8 +41,8 @@ class PatientTests {
 	@DisplayName("find all")
      void findalltest() {
     	 List<Patient> patients = new ArrayList <Patient>();
-    	 patients.add(new Patient (123,"Vibhrat",778899,"email@gmail","password","O positive","Male",23,"Potheri"));
-    	 patients.add(new Patient (234,"thampi",778899,"email@gmail","password","O positive","Male",23,"Potheri"));
+    	 patients.add(new Patient (123,"Vibhrat",778899L,"email@gmail","password","O positive","Male",23,"Potheri"));
+    	 patients.add(new Patient (234,"thampi",778899L,"email@gmail","password","O positive","Male",23,"Potheri"));
     	 
     	 Mockito.when(dao.findAll()).thenReturn(patients);
     	 assertEquals(service.getAllPatient(),patients);
@@ -52,7 +52,7 @@ class PatientTests {
 	@DisplayName("Find by Id")
 	void findbyId() {
 		
-   	 Optional <Patient> patient = Optional.of(new Patient(123,"Vibhrat",778899,"email@gmail","password","O positive","Male",23,"Potheri"));
+   	 Optional <Patient> patient = Optional.of(new Patient(123,"Vibhrat",778899L,"email@gmail","password","O positive","Male",23,"Potheri"));
    	 Mockito.when(dao.findById(patient.get().getPatientId())).thenReturn(patient);
    	 assertEquals(service.getPatient(123), patient);
 	}

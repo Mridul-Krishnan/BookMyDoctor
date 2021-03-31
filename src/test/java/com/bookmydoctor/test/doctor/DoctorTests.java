@@ -21,6 +21,10 @@ import com.bookmydoctor.app.dao.IDoctorDao;
 import com.bookmydoctor.app.model.Doctor;
 import com.bookmydoctor.app.service.ImplDoctorService;
 
+/**
+ * @author Mri scan
+ *
+ */
 @SpringBootTest(classes = BookMyDoctorApplication.class)
 public class DoctorTests {
 	

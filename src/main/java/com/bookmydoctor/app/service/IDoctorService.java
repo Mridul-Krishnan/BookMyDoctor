@@ -6,6 +6,10 @@ import com.bookmydoctor.app.model.Appointment;
 import com.bookmydoctor.app.model.AvailabilityDates;
 import com.bookmydoctor.app.model.Doctor;
 
+/**
+ * @author Mri scan
+ *
+ */
 public interface IDoctorService {
 
 	public Doctor addDoctor(Doctor bean);
