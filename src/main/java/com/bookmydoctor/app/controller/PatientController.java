@@ -41,7 +41,7 @@ public class PatientController {
 		if (!patient.getBloodGroup().matches("^(A|B|AB|O)[+-]?$"))
 			throw new PatientException("Enter a Valid Blood group");
 		String phone= String.valueOf(patient.getMobileNo());
-		if (phone.length()==10)
+		if (phone.length()!=10)
 			throw new PatientException("Enter valid MobileNo");
 		return service.addPatient(patient);
 	}

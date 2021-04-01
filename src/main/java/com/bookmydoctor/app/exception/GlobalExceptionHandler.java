@@ -40,6 +40,13 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 		return new ResponseEntity<ExceptionResponse>(exceptionResponse,HttpStatus.FORBIDDEN);
 	}
 	
+	@ExceptionHandler(AppointmentException.class)
+	public final ResponseEntity<ExceptionResponse> handleGlobalException(AppointmentException ex, WebRequest req)
+	{
+		ExceptionResponse exceptionResponse = new ExceptionResponse(new Date(), ex.getMessage(), req.getDescription(false), HttpStatus.FORBIDDEN.getReasonPhrase());
+		return new ResponseEntity<ExceptionResponse>(exceptionResponse,HttpStatus.FORBIDDEN);
+	}
+	
 	
 	
 }

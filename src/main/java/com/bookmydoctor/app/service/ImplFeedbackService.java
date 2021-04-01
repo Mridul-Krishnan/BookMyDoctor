@@ -16,8 +16,7 @@ import com.bookmydoctor.app.model.FeedBack;
  * @author rajan
  *
  */
-@Service("service")
-@Transactional
+@Service
 public class ImplFeedbackService implements IFeedbackService {
 	@Autowired
 	IFeedbackDao dao;

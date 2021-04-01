@@ -17,8 +17,7 @@ import com.bookmydoctor.app.model.Patient;
  *
  */
 
-@Service("service")
-@Transactional
+@Service
 public class ImplPatientService implements IPatientService {
 
 	@Autowired

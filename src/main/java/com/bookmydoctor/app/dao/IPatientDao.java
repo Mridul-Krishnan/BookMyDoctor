@@ -14,9 +14,6 @@ import com.bookmydoctor.app.model.Patient;
 @Repository
 public interface IPatientDao extends JpaRepository<Patient , Integer>{
 
-	
 
-	List<Appointment> getAppointmentByPatientId(int patientId);
-	List<Patient> getPatientListByDoctor(int patientId);
 	
 }

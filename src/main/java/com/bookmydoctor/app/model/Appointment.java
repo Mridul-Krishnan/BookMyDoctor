@@ -11,6 +11,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+//created by AJITH  and SHREYES
+
 @Entity
 public class Appointment {
 	
@@ -20,9 +23,11 @@ public class Appointment {
 	
 	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(name = "doctorId")
+	@JsonIgnoreProperties({"appointments"})
 	private Doctor doctor;
 	
 	@OneToOne(cascade = CascadeType.ALL)
+	@JsonIgnoreProperties({"appointment"})
 	private Patient patient;
 	
 	private LocalDateTime appointmentDate;
