@@ -16,7 +16,7 @@ import com.bookmydoctor.app.model.Doctor;
 @Service
 public class ImplAppointmentService implements IAppointmentService {
 	@Autowired
-	IAppointmentDao dao;
+	private IAppointmentDao dao;
 
 	@Override
 	public List<Appointment> getAllAppointments() {

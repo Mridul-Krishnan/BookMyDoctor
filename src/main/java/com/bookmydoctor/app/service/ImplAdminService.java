@@ -9,7 +9,7 @@ import com.bookmydoctor.app.model.Admin;
 
 public class ImplAdminService implements IAdminService {
 	@Autowired
-	IAdminDao dao;
+	private IAdminDao dao;
 
 	@Override
 	public Admin addAdmin(Admin admin) {

@@ -20,7 +20,7 @@ import com.bookmydoctor.app.model.Patient;
 public class ImplPatientService implements IPatientService {
 
 	@Autowired
-	IPatientDao dao;
+	private IPatientDao dao;
 	
 	@Override
 	public Patient addPatient(Patient patient) {

@@ -17,7 +17,7 @@ import com.bookmydoctor.app.model.FeedBack;
 @Service
 public class ImplFeedbackService implements IFeedbackService {
 	@Autowired
-	IFeedbackDao dao;
+	private IFeedbackDao dao;
 
 	@Override
 	public FeedBack addFeedback(FeedBack fdb) {

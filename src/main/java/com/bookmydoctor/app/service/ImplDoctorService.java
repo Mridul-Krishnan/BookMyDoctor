@@ -19,7 +19,7 @@ import com.bookmydoctor.app.model.Doctor;
 public class ImplDoctorService implements IDoctorService{
 
 	@Autowired
-	IDoctorDao dao;
+	private IDoctorDao dao;
 	
 	@Override
 	public Doctor addDoctor(Doctor bean) {
