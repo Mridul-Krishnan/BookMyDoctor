@@ -88,7 +88,9 @@ public class DoctorController {
 	
 	@PutMapping("/updateDoctor")
 	public Doctor updateDoctor(@RequestBody Doctor doctor)
-	{
+	{	
+		if(service.getDoctor(doctor.getDoctorId()) == null)
+			throw new DoctorException("Doctor doesn't exist");
 		return service.updateDoctorProfile(doctor);
 	}
 	
