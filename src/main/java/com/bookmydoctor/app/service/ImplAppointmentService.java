@@ -46,7 +46,7 @@ public class ImplAppointmentService implements IAppointmentService {
 	public List<Appointment> getAppointments(Doctor doc) {
 		// TODO Auto-generated method stub
 		List<Appointment> appointments = dao.findAll();
-		appointments = appointments.stream().filter(i -> i.getDoctor().getDoctorId() == doc.getDoctorId())
+		appointments = appointments.stream().filter(i->i.getDoctor() != null).filter(i -> i.getDoctor().getDoctorId() == doc.getDoctorId())
 				.collect(Collectors.toList());
 		return appointments;
 	}

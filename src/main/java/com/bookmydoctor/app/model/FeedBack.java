@@ -19,11 +19,11 @@ public class FeedBack {
 	public int feedbackId;
 	
 	@OneToOne
-	@JoinColumn(name = "patientId")
+	@JoinColumn(name = "patientId", referencedColumnName = "patientId")
 	private Patient patient;
 	
 	@ManyToOne
-	@JoinColumn(name = "doctorId")
+	@JoinColumn(name = "doctorId", referencedColumnName = "doctorId")
 	private Doctor doctor;
 	public int rating;
 

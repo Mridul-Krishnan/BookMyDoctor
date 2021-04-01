@@ -44,12 +44,12 @@ public class AppointmentController {
 	@PutMapping("/updateappointment/")
 	public Appointment updateAppointment(@RequestBody Appointment appointment) throws AppointmentException
 	{
-		if(!appointment.getAppointmentStatus().contains("Approved"+"Cancled"+"Compleated"))
-			throw new AppointmentException("check again ");
+//		if(!appointment.getAppointmentStatus().contains("Approved"+"Cancled"+"Compleated"))
+//			throw new AppointmentException("check again ");
 		return service.updateAppointment(appointment);
 	}
-	@GetMapping("/getappointment/{Id}")
-	public Optional <Appointment> getAppointment(@PathVariable("Id") int appointmentId)throws AppointmentException{
+	@GetMapping("/getappointment/{Id}") 
+	public Optional <Appointment> getAppointment(@PathVariable(name = "Id") int appointmentId)throws AppointmentException{
 		Optional <Appointment> appointment = service.getAppointment(appointmentId);
 		if (Character.isAlphabetic(appointmentId)) 
 			throw new AppointmentException ("Enter only numbers");
@@ -57,14 +57,14 @@ public class AppointmentController {
 	}
 	
 	@GetMapping("/getAppointmentByDoctor/{id}")
-	public List<Appointment> getAppointmentByDoctor(@PathVariable("Id") int doctorId)
+	public List<Appointment> getAppointmentByDoctor(@PathVariable(name = "id") int doctorId)
 	{	Doctor doctor = new Doctor();
 		doctor.setDoctorId(doctorId);
 		return service.getAppointments(doctor);
 	}
 	
 	@GetMapping("/getAppointmentsByDate/{date}")
-	public List<Appointment> getAppointmentsByDate(@PathVariable("date") LocalDate date)
+	public List<Appointment> getAppointmentsByDate(@PathVariable(name = "date") LocalDate date)
 	{
 		return service.getAppointments(date);
 	}

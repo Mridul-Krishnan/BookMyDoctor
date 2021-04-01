@@ -22,7 +22,7 @@ public class Appointment {
 	private int appointmentId;
 	
 	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	@JoinColumn(name = "doctorId")
+	@JoinColumn(name = "doctorId", referencedColumnName = "doctorId")
 	@JsonIgnoreProperties({"appointments"})
 	private Doctor doctor;
 	

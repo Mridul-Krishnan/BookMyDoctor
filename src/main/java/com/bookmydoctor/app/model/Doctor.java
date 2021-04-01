@@ -33,7 +33,7 @@ public class Doctor {
 	
 	
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name  = "availabilityId")
+	@JoinColumn(name  = "availabilityId", referencedColumnName = "availabilityId")
 	@JsonIgnoreProperties({"doctor"})
 	private AvailabilityDates availabilityDates;
 	

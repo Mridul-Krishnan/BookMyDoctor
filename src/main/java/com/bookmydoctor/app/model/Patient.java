@@ -23,12 +23,12 @@ public class Patient {
 	private int age;
 	private String address;
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "feedbackId")
+	@JoinColumn(name = "feedbackId", referencedColumnName = "feedbackId")
 	@JsonIgnoreProperties(value = {"doctor"})
 	private FeedBack feedback;
 
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "appointmentId")
+	@JoinColumn(name = "appointmentId", referencedColumnName = "appointmentId")
 	private Appointment appointment;
 
 	public int getPatientId() {
