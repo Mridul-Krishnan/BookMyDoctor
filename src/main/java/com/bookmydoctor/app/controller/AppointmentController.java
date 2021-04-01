@@ -1,4 +1,5 @@
 package com.bookmydoctor.app.controller;
+
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
@@ -24,48 +25,48 @@ import com.bookmydoctor.app.service.ImplAppointmentService;
 public class AppointmentController {
 	@Autowired
 	ImplAppointmentService service;
-	
+
 	@GetMapping("/getappointments/all")
-	public List<Appointment> getAllAppointments(){
+	public List<Appointment> getAllAppointments() {
 		return service.getAllAppointments();
-		
+
 	}
+
 	@DeleteMapping("/deleteappointment/{Id}")
-	public void deleteAppointment(@PathVariable("Id") int appointmentId) throws AppointmentException
-	{
-		Optional <Appointment> appointment = service.getAppointment(appointmentId);
-		if (Character.isAlphabetic(appointmentId)) 
-			throw new AppointmentException ("Enter only numbers");
-		if(service.getAppointment(appointmentId) == null)
+	public void deleteAppointment(@PathVariable("Id") int appointmentId) throws AppointmentException {
+		if (Character.isAlphabetic(appointmentId))
+			throw new AppointmentException("Enter only numbers");
+		if (service.getAppointment(appointmentId) == null)
 			throw new AppointmentException("ID doesn't exist");
 
 		service.deleteAppointment(appointmentId);
 	}
+
 	@PutMapping("/updateappointment/")
-	public Appointment updateAppointment(@RequestBody Appointment appointment) throws AppointmentException
-	{
+	public Appointment updateAppointment(@RequestBody Appointment appointment) throws AppointmentException {
 //		if(!appointment.getAppointmentStatus().contains("Approved"+"Cancled"+"Compleated"))
 //			throw new AppointmentException("check again ");
 		return service.updateAppointment(appointment);
 	}
-	@GetMapping("/getappointment/{Id}") 
-	public Optional <Appointment> getAppointment(@PathVariable(name = "Id") int appointmentId)throws AppointmentException{
-		Optional <Appointment> appointment = service.getAppointment(appointmentId);
-		if (Character.isAlphabetic(appointmentId)) 
-			throw new AppointmentException ("Enter only numbers");
+
+	@GetMapping("/getappointment/{Id}")
+	public Optional<Appointment> getAppointment(@PathVariable(name = "Id") int appointmentId)
+			throws AppointmentException {
+
+		if (Character.isAlphabetic(appointmentId))
+			throw new AppointmentException("Enter only numbers");
 		return service.getAppointment(appointmentId);
 	}
-	
+
 	@GetMapping("/getAppointmentByDoctor/{id}")
-	public List<Appointment> getAppointmentByDoctor(@PathVariable(name = "id") int doctorId)
-	{	Doctor doctor = new Doctor();
+	public List<Appointment> getAppointmentByDoctor(@PathVariable(name = "id") int doctorId) {
+		Doctor doctor = new Doctor();
 		doctor.setDoctorId(doctorId);
 		return service.getAppointments(doctor);
 	}
-	
+
 	@GetMapping("/getAppointmentsByDate/{date}")
-	public List<Appointment> getAppointmentsByDate(@PathVariable(name = "date") LocalDate date)
-	{
+	public List<Appointment> getAppointmentsByDate(@PathVariable(name = "date") LocalDate date) {
 		return service.getAppointments(date);
 	}
 }

@@ -1,13 +1,9 @@
 package com.bookmydoctor.test.doctor;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertIterableEquals;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
 import java.util.List;
-import java.util.ListIterator;
 import java.util.Optional;
 
 import org.junit.jupiter.api.DisplayName;

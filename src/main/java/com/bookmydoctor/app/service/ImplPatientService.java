@@ -1,12 +1,11 @@
 package com.bookmydoctor.app.service;
-import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import com.bookmydoctor.app.dao.IPatientDao;
 import com.bookmydoctor.app.model.Appointment;
 import com.bookmydoctor.app.model.Doctor;
