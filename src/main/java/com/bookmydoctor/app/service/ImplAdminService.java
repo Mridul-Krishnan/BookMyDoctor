@@ -3,10 +3,11 @@ package com.bookmydoctor.app.service;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.bookmydoctor.app.dao.IAdminDao;
 import com.bookmydoctor.app.model.Admin;
-
+@Service
 public class ImplAdminService implements IAdminService {
 	@Autowired
 	private IAdminDao dao;
