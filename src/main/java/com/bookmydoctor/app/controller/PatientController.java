@@ -46,7 +46,7 @@ public class PatientController {
 		return service.addPatient(patient);
 	}
 	@GetMapping ("/getPatient/all")
-	public List<Patient> getallPatient (@RequestBody Patient patient) {
+	public List<Patient> getallPatient () {
 	
 		return service.getAllPatient();
 	}

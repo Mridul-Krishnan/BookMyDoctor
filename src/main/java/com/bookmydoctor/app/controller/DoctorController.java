@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.bookmydoctor.app.constants.Constants;
 import com.bookmydoctor.app.exception.DoctorException;
 import com.bookmydoctor.app.model.Appointment;
 import com.bookmydoctor.app.model.AvailabilityDates;
@@ -37,7 +38,7 @@ public class DoctorController {
 		if(doctorId>100 || doctorId<1 )
 			throw new DoctorException("Invalid Id number");
 		if(service.getDoctor(doctorId) == null)
-			throw new DoctorException("Doctor doesn't exist");
+			throw new DoctorException(Constants.notDoctorExist);
 		
 		return service.getDoctor(doctorId);
 	}
@@ -52,9 +53,9 @@ public class DoctorController {
 	public List<Appointment> getAppointmentsByDoctorId(@PathVariable(name = "id") int doctorId)
 	{
 		if(doctorId>100 || doctorId<1 )
-			throw new DoctorException("Invalid Id number");
+			throw new DoctorException(Constants.invalidId);
 		if(service.getDoctor(doctorId) == null)
-			throw new DoctorException("Doctor doesn't exist");
+			throw new DoctorException(Constants.notDoctorExist);
 		
 		return service.getAppointmentsByDoctorId(doctorId);
 	}
@@ -66,7 +67,7 @@ public class DoctorController {
 			throw new DoctorException("Doctor Name must be made of alphabets");
 		
 		if(doctor.getDoctorId()>100 || doctor.getDoctorId()<1 )
-			throw new DoctorException("Invalid Id number");
+			throw new DoctorException(Constants.invalidId);
 		
 		if(!doctor.getEmail().matches("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"))
 			throw new DoctorException("Invalid Email ID");
@@ -90,7 +91,7 @@ public class DoctorController {
 	public Doctor updateDoctor(@RequestBody Doctor doctor)
 	{	
 		if(service.getDoctor(doctor.getDoctorId()) == null)
-			throw new DoctorException("Doctor doesn't exist");
+			throw new DoctorException(Constants.notDoctorExist);
 		return service.updateDoctorProfile(doctor);
 	}
 	
@@ -104,9 +105,9 @@ public class DoctorController {
 	public Doctor deleteDoctor(@PathVariable(name = "id") int doctorId)
 	{
 		if(doctorId>100 || doctorId<1 )
-			throw new DoctorException("Invalid Id number");
+			throw new DoctorException(Constants.invalidId);
 		if(service.getDoctor(doctorId) == null)
-			throw new DoctorException("Doctor doesn't exist");
+			throw new DoctorException(Constants.notDoctorExist);
 		
 		return service.removeDoctor(doctorId);
 	}

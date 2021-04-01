@@ -38,6 +38,6 @@ public class Admin {
 		this.password = password;
 	}
 	public Admin() {
-		// TODO Auto-generated constructor stub
+
 	}
 }

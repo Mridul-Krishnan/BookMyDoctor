@@ -5,7 +5,7 @@ public class AdminException  extends RuntimeException {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	String message;
+	final String message;
 
 	public AdminException(String message) {
 		super();
