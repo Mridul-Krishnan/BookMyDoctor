@@ -17,7 +17,7 @@ public class AvailabilityDates {
 	@Id
 	@GeneratedValue
 	private int availabilityId;
-	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
+	@OneToOne
 	@JoinColumn(name = "doctorId", referencedColumnName = "doctorId")
 	private Doctor doctor;
 	private LocalDate fromDate;

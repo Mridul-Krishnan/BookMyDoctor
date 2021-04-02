@@ -19,11 +19,11 @@ public class FeedBack {
 	@GeneratedValue
 	public int feedbackId;
 	
-	@OneToOne(cascade = CascadeType.MERGE)
+	@OneToOne
 	@JoinColumn(name = "patientId", referencedColumnName = "patientId")
 	private Patient patient;
 	
-	@ManyToOne(cascade = CascadeType.MERGE)
+	@ManyToOne
 	@JoinColumn(name = "doctorId", referencedColumnName = "doctorId")
 	private Doctor doctor;
 	public int rating;

@@ -52,7 +52,7 @@ public class PatientController {
 	}
 	@GetMapping("/getPatient/{id}")
 	public Optional<Patient> getPatient(@PathVariable ("id") int patientId) throws PatientException{
-		if (!Character.isAlphabetic(patientId)) {
+		if (Character.isAlphabetic(patientId)) {
 			throw new PatientException("Enter Numbers Only");
 		}
 				
@@ -61,7 +61,7 @@ public class PatientController {
 	
 	@PutMapping("/updatePatient")
 	public Patient editPatientProfile (@RequestBody Patient patient) {
-		if(!patient.getPatientName().matches("[A-Z][a-b ]+"))
+		if(!patient.getPatientName().matches("[A-Z][a-z ]+"))
 			throw new PatientException("Name must contain alphabets only");
 		return service.editPatientProfile(patient);
 	}
@@ -69,7 +69,7 @@ public class PatientController {
 	@DeleteMapping("deletePatient/{id}")
 	public String removePatientProfile (@PathVariable(name = "id") int patientId) throws PatientException{
 		Optional <Patient> patient = service.getPatient(patientId);
-		if (!Character.isAlphabetic(patientId)) 
+		if (Character.isAlphabetic(patientId)) 
 			throw new PatientException ("Enter Id in Numbers only");
 		if(service.getPatient(patientId) == null)
 			throw new PatientException("Doctor doesn't exist");

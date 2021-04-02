@@ -22,12 +22,12 @@ public class Patient {
 	private String gender;
 	private int age;
 	private String address;
-	@OneToOne(cascade = CascadeType.MERGE)
+	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "feedbackId", referencedColumnName = "feedbackId")
 	@JsonIgnoreProperties(value = {"doctor"})
 	private FeedBack feedback;
 
-	@OneToOne(cascade = CascadeType.MERGE)
+	@OneToOne(mappedBy = "patient")
 	@JoinColumn(name = "appointmentId", referencedColumnName = "appointmentId")
 	@JsonIgnoreProperties({"patient"})
 	private Appointment appointment;
