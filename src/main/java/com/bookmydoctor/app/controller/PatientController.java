@@ -32,12 +32,12 @@ public class PatientController {
 	
 	@PostMapping("/addPatient")
 	public Patient addPatient (@RequestBody Patient patient)throws PatientException{
-		if(!patient.getPatientName().matches("[A-Z][a-b ]+"))
+		if(!patient.getPatientName().matches("[A-Z][a-z ]+"))
 			throw new PatientException("Name must contain alphabets only");
 		if (!patient.getEmail().matches("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"))
 			throw new PatientException("Enter a valid Email");
-		if(!patient.getGender().contains("male"+"Female"))
-			throw new PatientException("Enter correct Gender ");
+//		if(!patient.getGender().contains("male"+"Female"))
+//			throw new PatientException("Enter correct Gender ");
 		if (!patient.getBloodGroup().matches("^(A|B|AB|O)[+-]?$"))
 			throw new PatientException("Enter a Valid Blood group");
 		String phone= String.valueOf(patient.getMobileNo());

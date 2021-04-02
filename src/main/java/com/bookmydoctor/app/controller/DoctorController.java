@@ -66,8 +66,8 @@ public class DoctorController {
 		if(!doctor.getDoctorName().matches("[A-Z][a-z ]+"))
 			throw new DoctorException("Doctor Name must be made of alphabets");
 		
-		if(doctor.getDoctorId()>100 || doctor.getDoctorId()<1 )
-			throw new DoctorException(Constants.invalidId);
+//		if(doctor.getDoctorId()>100 || doctor.getDoctorId()<1 )
+//			throw new DoctorException(Constants.invalidId);
 		
 		if(!doctor.getEmail().matches("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"))
 			throw new DoctorException("Invalid Email ID");

@@ -44,8 +44,8 @@ public class AppointmentController {
 
 	@PutMapping("/updateappointment/")
 	public Appointment updateAppointment(@RequestBody Appointment appointment) throws AppointmentException {
-		if(!appointment.getAppointmentStatus().contains("Approved") || !appointment.getAppointmentStatus().contains("Cancelled") || !appointment.getAppointmentStatus().contains("Completed"))
-			throw new AppointmentException("check again ");
+//		if(!appointment.getAppointmentStatus().contains("Approved") || !appointment.getAppointmentStatus().contains("Cancelled") || !appointment.getAppointmentStatus().contains("Completed"))
+//			throw new AppointmentException("check again ");
 		return service.updateAppointment(appointment);
 	}
 

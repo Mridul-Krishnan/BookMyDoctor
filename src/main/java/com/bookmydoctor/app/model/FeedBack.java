@@ -1,5 +1,6 @@
 package com.bookmydoctor.app.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -18,11 +19,11 @@ public class FeedBack {
 	@GeneratedValue
 	public int feedbackId;
 	
-	@OneToOne
+	@OneToOne(cascade = CascadeType.MERGE)
 	@JoinColumn(name = "patientId", referencedColumnName = "patientId")
 	private Patient patient;
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.MERGE)
 	@JoinColumn(name = "doctorId", referencedColumnName = "doctorId")
 	private Doctor doctor;
 	public int rating;

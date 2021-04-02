@@ -32,12 +32,12 @@ public class Doctor {
 	private double chargesPerVisit;
 	
 	
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.MERGE)
 	@JoinColumn(name  = "availabilityId", referencedColumnName = "availabilityId")
 	@JsonIgnoreProperties({"doctor"})
 	private AvailabilityDates availabilityDates;
 	
-	@OneToMany( cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@OneToMany( cascade = CascadeType.MERGE, fetch = FetchType.EAGER,mappedBy = "doctor")
 	@JsonIgnoreProperties({"doctor"})
 	private List<Appointment> appointments;
 	

@@ -21,12 +21,13 @@ public class Appointment {
 	@GeneratedValue
 	private int appointmentId;
 	
-	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
 	@JoinColumn(name = "doctorId", referencedColumnName = "doctorId")
 	@JsonIgnoreProperties({"appointments"})
 	private Doctor doctor;
 	
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.MERGE, mappedBy = "appointment")
+	@JoinColumn(name = "patientId", referencedColumnName = "patientId")
 	@JsonIgnoreProperties({"appointment"})
 	private Patient patient;
 	
