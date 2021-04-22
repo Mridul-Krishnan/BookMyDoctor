@@ -28,7 +28,7 @@ public class Appointment {
 	
 	@OneToOne
 	@JoinColumn(name = "patientId", referencedColumnName = "patientId")
-	@JsonIgnoreProperties({"appointment"})
+	//@JsonIgnoreProperties({"appointment"})
 	private Patient patient;
 	
 	private LocalDateTime appointmentDate;

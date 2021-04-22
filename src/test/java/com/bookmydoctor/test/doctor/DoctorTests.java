@@ -19,7 +19,7 @@ import com.bookmydoctor.app.model.Doctor;
 import com.bookmydoctor.app.service.ImplDoctorService;
 
 /**
- * @author Mri scan
+ * @author Mridul
  *
  */
 @SpringBootTest(classes = BookMyDoctorApplication.class)

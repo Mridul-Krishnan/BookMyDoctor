@@ -28,11 +28,6 @@ public class FeedBack {
 	private Doctor doctor;
 	public int rating;
 
-	public FeedBack(int rating, String feedbackComment) {
-		super();
-		this.rating = rating;
-		this.feedbackComment = feedbackComment;
-	}
 
 	private String feedbackComment;
 
@@ -95,9 +90,13 @@ public class FeedBack {
 		this.feedbackComment = feedbackComment;
 	}
 
-	public FeedBack(String string) {
+	public FeedBack() {
+		
+	}
+
+	public FeedBack(String feedbackComment) {
 		super();
-		// TODO Auto-generated constructor stub
+		this.feedbackComment = feedbackComment;
 	}
 
 	

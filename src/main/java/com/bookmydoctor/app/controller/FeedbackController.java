@@ -27,9 +27,9 @@ public class FeedbackController {
 	@PostMapping("/addFeedBack")
 	public FeedBack addFeedBack(@RequestBody FeedBack fdb)   {
 		FeedBack test = service.addFeedback(fdb);
-		if (test.getRating() == 0 || test.getFeedbackComment() == null || test.getFeedbackId() == 0 || (test.getRating()<1 && test.getRating()>10))  {
-			throw new FeedBackException("Enter values for feedback");
-		}
+//		if (test.getRating() == 0 || test.getFeedbackComment() == null || test.getFeedbackId() == 0 || (test.getRating()<1 && test.getRating()>10))  {
+//			throw new FeedBackException("Enter values for feedback");
+//		}
 		
 		return test;
 	}

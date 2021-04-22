@@ -1,6 +1,5 @@
 package com.bookmydoctor.app.model;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -22,12 +21,12 @@ public class Patient {
 	private String gender;
 	private int age;
 	private String address;
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne
 	@JoinColumn(name = "feedbackId", referencedColumnName = "feedbackId")
 	@JsonIgnoreProperties(value = {"doctor"})
 	private FeedBack feedback;
 
-	@OneToOne(mappedBy = "patient")
+	@OneToOne
 	@JoinColumn(name = "appointmentId", referencedColumnName = "appointmentId")
 	@JsonIgnoreProperties({"patient"})
 	private Appointment appointment;
